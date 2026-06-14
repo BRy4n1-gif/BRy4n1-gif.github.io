@@ -1,178 +1,1288 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.Sc. Romel Percy Melgarejo Bolivar | Perfil Profesional</title>
-    <style>
-        :root {
-            --primary: #1e3a8a;
-            --secondary: #0284c7;
-            --dark: #1f2937;
-            --light: #f3f4f6;
-            --white: #ffffff;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark);
-            background-color: var(--light);
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        section {
-            background-color: var(--white);
-            padding: 1.8rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 0.3rem;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        ul {
-            list-style-type: none;
-        }
-        li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.2rem;
-            position: relative;
-        }
-        li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
-            font-weight: bold;
-        }
-        .badge {
-            background-color: var(--light);
-            color: var(--primary);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 0.3rem;
-        }
-        .project-title {
-            font-weight: bold;
-            color: var(--dark);
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #6b7280;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portafolio de Bryan Cutipa Carcasi - Estadístico e Informático" />
+  <title>Bryan Cutipa — Portafolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --cyan: #00ffff;
+      --cyan-dim: rgba(0, 255, 255, 0.12);
+      --pink: #ff00ff;
+      --pink-dim: rgba(255, 0, 255, 0.12);
+      --indigo: #aa88ff;
+      --surface: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000000;
+      color: #e2e8f0;
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ---- Scrollbar ---- */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #000000;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 255, 255, 0.15);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 255, 255, 0.35);
+    }
+
+    /* ---- Glow utilities ---- */
+    .glow-cyan {
+      text-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.2);
+    }
+
+    .glow-box {
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2), inset 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .glow-box-hover:hover {
+      box-shadow: 0 0 60px rgba(255, 255, 255, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ---- Keyframes ---- */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-18px) rotate(1.2deg);
+      }
+    }
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: .25;
+      }
+
+      50% {
+        opacity: .85;
+      }
+    }
+
+    @keyframes moveLine {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(100vw + 500px));
+      }
+    }
+
+    @keyframes pulseGlow {
+
+      0%,
+      100% {
+        opacity: .6;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+      }
+
+      50% {
+        opacity: 1;
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+      }
+    }
+
+    @keyframes pulseBg {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: .3;
+      }
+
+      50% {
+        transform: scale(1.1);
+        opacity: .6;
+      }
+    }
+
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(.96);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes charReveal {
+      0% {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes scanline {
+      0% {
+        top: -4px;
+      }
+
+      100% {
+        top: 100%;
+      }
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes orbit {
+      0% {
+        transform: rotate(0deg) translateX(70px) rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg) translateX(70px) rotate(-360deg);
+      }
+    }
+
+    /* ---- Animation classes ---- */
+    .anim-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .anim-twinkle {
+      animation: twinkle 3s ease-in-out infinite;
+    }
+
+    .anim-moveLine {
+      animation: moveLine 8s linear infinite;
+    }
+
+    .anim-pulseGlow {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    .anim-pulseBg {
+      animation: pulseBg 5s ease-in-out infinite;
+    }
+
+    .anim-fadeInScale {
+      animation: fadeInScale .85s cubic-bezier(.16, 1, .3, 1) forwards;
+    }
+
+    .anim-fadeInUp {
+      animation: fadeInUp .85s cubic-bezier(.16, 1, .3, 1) forwards;
+    }
+
+    .anim-charReveal {
+      animation: charReveal .5s cubic-bezier(.16, 1, .3, 1) forwards;
+    }
+
+    .anim-fadeIn {
+      animation: fadeIn .8s ease-out forwards;
+    }
+
+    .d100 {
+      animation-delay: .1s;
+    }
+
+    .d200 {
+      animation-delay: .2s;
+    }
+
+    .d300 {
+      animation-delay: .3s;
+    }
+
+    .d500 {
+      animation-delay: .5s;
+    }
+
+    .d600 {
+      animation-delay: .6s;
+    }
+
+    .d800 {
+      animation-delay: .8s;
+    }
+
+    .d1000 {
+      animation-delay: 1s;
+    }
+
+    .d1200 {
+      animation-delay: 1.2s;
+    }
+
+    .d1500 {
+      animation-delay: 1.5s;
+    }
+
+    .d2000 {
+      animation-delay: 2s;
+    }
+
+    /* ---- Avatar card special ---- */
+    #avatar-card {
+      position: relative;
+      background: linear-gradient(135deg, #e8e8e8 0%, #ffffff 50%, #d0d0d0 100%);
+      border: none;
+      overflow: hidden;
+    }
+
+    .robot-emoji {
+      font-size: 5rem;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    }
+
+    /* ---- Orbit dots ---- */
+    .orbit-ring {
+      position: absolute;
+      width: 155px;
+      height: 155px;
+      border: 1px dashed rgba(34, 211, 238, 0.15);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .orbit-dot {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      background: var(--cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(34, 211, 238, .8);
+      top: 50%;
+      left: 50%;
+      transform-origin: 0 0;
+    }
+
+    /* ---- Stat cards ---- */
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.4rem 1.6rem;
+      transition: border-color .3s, transform .3s;
+      backdrop-filter: blur(8px);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .stat-card.cyan:hover {
+      border-color: rgba(34, 211, 238, .4);
+    }
+
+    .stat-card.pink:hover {
+      border-color: rgba(244, 114, 182, .4);
+    }
+
+    .stat-card.indigo:hover {
+      border-color: rgba(129, 140, 248, .4);
+    }
+
+    /* ---- Project cards ---- */
+    .proj-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color .4s, transform .4s, box-shadow .4s;
+    }
+
+    .proj-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .proj-card.c-cyan:hover {
+      border-color: rgba(34, 211, 238, .4);
+      box-shadow: 0 20px 50px rgba(34, 211, 238, .12);
+    }
+
+    .proj-card.c-pink:hover {
+      border-color: rgba(244, 114, 182, .4);
+      box-shadow: 0 20px 50px rgba(244, 114, 182, .12);
+    }
+
+    .proj-card.c-indigo:hover {
+      border-color: rgba(129, 140, 248, .4);
+      box-shadow: 0 20px 50px rgba(129, 140, 248, .12);
+    }
+
+    .proj-img {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-img .blob {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      filter: blur(28px);
+      transition: transform .6s;
+    }
+
+    .proj-card:hover .blob {
+      transform: scale(1.5);
+    }
+
+    .proj-icon {
+      font-size: 2.5rem;
+      position: relative;
+      z-index: 2;
+      transition: transform .4s;
+    }
+
+    .proj-card:hover .proj-icon {
+      transform: scale(1.1);
+    }
+
+    /* ---- Timeline ---- */
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(34, 211, 238, .4), transparent);
+      transform: translateX(-50%);
+    }
+
+    .timeline-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 10px rgba(34, 211, 238, .7);
+      border: 2px solid #050810;
+    }
+
+    /* ---- Badge ---- */
+    .badge {
+      display: inline-block;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: .25rem .75rem;
+      font-size: .7rem;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: .05em;
+      transition: background .25s, border-color .25s;
+    }
+
+    .badge-cyan {
+      color: var(--cyan);
+    }
+
+    .badge-pink {
+      color: var(--pink);
+    }
+
+    .badge-indigo {
+      color: var(--indigo);
+    }
+
+    /* ---- Skill bar ---- */
+    .skill-bar-track {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 1.2s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    /* ---- Input / form ---- */
+    .form-input {
+      width: 100%;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: .75rem 1rem;
+      color: #e2e8f0;
+      font-family: inherit;
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .3s;
+    }
+
+    .form-input:focus {
+      border-color: rgba(34, 211, 238, .5);
+    }
+
+    .form-input::placeholder {
+      color: #4b5563;
+    }
+
+    /* ---- Misc ---- */
+    .section-rule {
+      height: 1px;
+      flex-grow: 1;
+      background: linear-gradient(to right, rgba(34, 211, 238, .35), transparent);
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .perspective {
+      perspective: 900px;
+    }
+
+    .bg-radial {
+      background: radial-gradient(circle, var(--tw-gradient-stops));
+    }
+
+    /* ---- Scroll-reveal ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
-<body>
 
-    <header>
-        <h1>M.Sc. Romel Percy Melgarejo Bolivar</h1>
-        <p>Docente Universitario | Especialista en TI e Ingeniería Estadística e Informática</p>
-    </header>
+<body class="select-none">
 
-    <div class="container">
-        
-        <section id="sobre-mi">
-            <h2>Resumen Profesional</h2>
-            <p>Magíster Scientiae en Informática con mención en Gerencia de Tecnologías de Información y Comunicaciones por la Universidad Nacional del Altiplano. Profesional especializado en Ciencia de Datos, redes telemáticas y desarrollo de software con registro de patentes de propiedad intelectual ante INDECOPI.</p>
-        </section>
+  <!-- ===================== AVATAR PAGE ===================== -->
+  <div id="avatar-page"
+    class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black cursor-pointer transition-opacity duration-700">
 
-        <section id="educacion">
-            <h2>Formación Académica</h2>
-            <ul>
-                <li>
-                    <strong>Magíster Scientiae en Informática</strong><br>
-                    Mención en Gerencia de Tecnologías de Información y Comunicaciones — Universidad Nacional del Altiplano
-                </li>
-                <li>
-                    <strong>Ingeniero Estadístico e Informático</strong><br>
-                    Título Profesional — Universidad Nacional del Altiplano
-                </li>
-            </ul>
-        </section>
+    <!-- Starfield -->
+    <div id="starfield" class="absolute inset-0 z-0"></div>
 
-        <section id="experiencia">
-            <h2>Experiencia Destacada</h2>
-            <ul>
-                <li>
-                    <strong>Docente Universitario</strong> — Universidad Nacional del Altiplano Puno<br>
-                    <span class="badge">2020 - Actualidad</span>
-                </li>
-                <li>
-                    <strong>Presidente del Capítulo de Ingenieros Estadísticos e Informáticos</strong> — Colegio de Ingenieros del Perú (CD Puno)<br>
-                    <span class="badge">2022 - Actualidad</span>
-                </li>
-                <li>
-                    <strong>Docente Auxiliar Ordinario</strong> — Universidad Nacional de Moquegua
-                </li>
-            </ul>
-        </section>
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center w-full px-4 perspective">
 
-        <section id="propiedad-intelectual">
-            <h2>Software y Propiedad Intelectual (INDECOPI)</h2>
-            <ul>
-                <li>
-                    <span class="project-title">Criptologin</span> — Módulo integrable de validación de usuarios mediante token USB DNI electrónico (Reg. 31152022).
-                </li>
-                <li>
-                    <span class="project-title">Enviromaker</span> — Software de procesamiento y generación de ambientes tridimensionales (Reg. 31132022).
-                </li>
-                <li>
-                    <span class="project-title">GLPAK GUI</span> — Interfaz gráfica para renderizado 3D en ventanas Win GDI+ (Reg. 31122022).
-                </li>
-                <li>
-                    <span class="project-title">Plataforma de Certificación Electrónica</span> — Derecho de autor por software (Reg. 1382017).
-                </li>
-            </ul>
-        </section>
+      <!-- Avatar card -->
+      <div class="relative mb-8 opacity-0 anim-fadeInScale d300">
+        <div id="avatar-card" class="w-44 h-44 rounded-full flex items-center justify-center anim-float"
+          style="box-shadow:0 0 50px rgba(255,255,255,.25), 0 0 80px rgba(34,211,238,.15), inset 0 2px 0 rgba(255,255,255,.9)">
+          <div class="orbit-ring">
+            <div class="orbit-dot" style="animation:orbit 4s linear infinite;"></div>
+            <div class="orbit-dot"
+              style="animation:orbit 4s linear infinite; animation-delay:-2s; background:var(--pink); box-shadow:0 0 8px rgba(244,114,182,.8);">
+            </div>
+          </div>
+          <span class="robot-emoji">🤖</span>
+        </div>
+      </div>
 
-        <section id="investigacion">
-            <h2>Producción Científica</h2>
-            <ul>
-                <li>
-                    <strong>Capítulo de Libro (2023):</strong> "Predicción de diabetes en mujeres mediante un modelo probabilístico basado en Redes Bayesianas" en <em>O Cuidado em Saúde Baseado em Evidências</em>.
-                </li>
-                <li>
-                    <strong>Artículo de Revista (2022):</strong> "Arquitectura pervasiva con tecnologías WebRTC híbridas para el desarrollo de un framework Modelo Vista Controlador de tiempo real".
-                </li>
-            </ul>
-        </section>
+      <!-- Badge -->
+      <div
+        class="flex items-center gap-2 mt-4 px-4 py-2 border border-white/10 rounded-full backdrop-blur-sm opacity-0 anim-fadeInUp d600"
+        style="background:rgba(255,255,255,.04)">
+        <div class="w-5 h-5 rounded-full"
+          style="background:linear-gradient(135deg,#818cf8,#22d3ee);box-shadow:0 0 12px rgba(129,140,248,.5)"></div>
+        <span class="text-white/80 text-xs mono tracking-wide">Data Sciencie</span>
+      </div>
+
+      <!-- Name -->
+      <div class="mt-10 text-center opacity-0 anim-fadeInUp d800">
+        <div id="typing-text"
+          class="text-5xl md:text-6xl font-bold text-white tracking-tight uppercase min-h-[72px] flex items-center justify-center gap-[1px] mono">
+        </div>
+        <div class="mt-3 text-sm text-white/45 font-light tracking-widest opacity-0 anim-fadeInUp d1200 uppercase mono">
+          Ingeniero Estadístico e Informático
+        </div>
+      </div>
 
     </div>
 
-    <footer>
-        <p>&copy; 2026 Romel Percy Melgarejo Bolivar. Desarrollado y alojado con GitHub Pages.</p>
-    </footer>
+    <!-- Enter button -->
+    <button id="enter-btn"
+      class="fixed bottom-6 right-6 z-50 text-white px-4 py-1.5 rounded-full transition-all duration-300 backdrop-blur-sm opacity-0 anim-fadeInUp d2000 hover:border-cyan-400/50 hover:text-cyan-400 hover:-translate-y-1 text-xs mono"
+      style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,0.15);">
+      →
+    </button>
+  </div>
 
+
+  <!-- ===================== PORTFOLIO PAGE ===================== -->
+  <div id="portfolio-page"
+    class="fixed inset-0 z-40 hidden opacity-0 bg-black overflow-y-auto transition-opacity duration-700">
+
+    <!-- Background decorations -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+      <canvas id="bg-canvas" class="absolute inset-0 w-full h-full"></canvas>
+
+      <!-- Neon moving lines - estilo primer HTML -->
+      <div class="anim-moveLine absolute h-[1px] opacity-60"
+        style="width:300px;top:20%;left:-300px;animation-delay:0s;background:linear-gradient(to right,transparent,#00ffff,#ff00ff,transparent)">
+      </div>
+      <div class="anim-moveLine absolute h-[1px] opacity-60"
+        style="width:200px;top:45%;left:-200px;animation-delay:2.5s;background:linear-gradient(to right,transparent,#00ffff,#ff00ff,transparent)">
+      </div>
+      <div class="anim-moveLine absolute h-[1px] opacity-60"
+        style="width:400px;top:70%;left:-400px;animation-delay:4.8s;background:linear-gradient(to right,transparent,#00ffff,#ff00ff,transparent)">
+      </div>
+      <div class="anim-moveLine absolute h-[1px] opacity-60"
+        style="width:250px;top:85%;left:-250px;animation-delay:6.2s;background:linear-gradient(to right,transparent,#00ffff,#ff00ff,transparent)">
+      </div>
+
+      <!-- Radiant blobs - estilo primer HTML -->
+      <div class="absolute w-[450px] h-[450px] -top-36 -right-36 rounded-full anim-pulseBg"
+        style="background:radial-gradient(circle,rgba(0,255,255,0.1),transparent)"></div>
+      <div class="absolute w-[400px] h-[400px] -bottom-24 -left-24 rounded-full anim-pulseBg"
+        style="background:radial-gradient(circle,rgba(255,0,255,0.1),transparent);animation-delay:2s"></div>
+
+      <!-- Vertical glowing border on the right edge (as seen in screenshot) -->
+      <div
+        class="fixed right-0 top-0 h-screen w-[3px] bg-cyan-400 shadow-[0_0_15px_rgba(0,255,255,0.7)] z-50 pointer-events-none">
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <button id="back-btn"
+      class="fixed top-5 left-5 z-50 text-white/70 px-3 py-1 rounded-full transition-all duration-300 backdrop-blur-sm hover:border-cyan-400/40 hover:text-cyan-400 text-xs mono"
+      style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,0.1);">
+      ←
+    </button>
+
+    <!-- NAV (Cyberpunk Trapezoidal Notch Custom Header) -->
+    <nav
+      class="fixed top-0 left-0 w-full h-[72px] z-40 bg-black/90 backdrop-blur-md flex items-center justify-between px-6 md:px-16"
+      style="border-bottom: none;">
+      <!-- Left Side Horizontal Line -->
+      <div
+        class="absolute bottom-0 left-0 w-[calc(50%-220px)] h-[1px] bg-cyan-400 shadow-[0_0_10px_rgba(0,255,255,0.5)]">
+      </div>
+
+      <!-- Center Notch SVG (Border and Background) -->
+      <div class="absolute bottom-[-30px] left-1/2 -translate-x-1/2 w-[440px] h-[30px] pointer-events-none z-10">
+        <svg width="440" height="30" viewBox="0 0 440 30" fill="none" xmlns="http://www.w3.org/2000/svg"
+          style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));">
+          <!-- Background fill of the notch -->
+          <path d="M 0 0 L 35 28 L 405 28 L 440 0 Z" fill="rgba(0, 0, 0, 0.95)" />
+          <!-- Glowing border path -->
+          <path d="M 0 0 L 35 28 L 405 28 L 440 0" stroke="#00ffff" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" style="filter: drop-shadow(0 0 5px rgba(0,255,255,0.85));" />
+        </svg>
+      </div>
+
+      <!-- Right Side Horizontal Line -->
+      <div
+        class="absolute bottom-0 right-0 w-[calc(50%-220px)] h-[1px] bg-cyan-400 shadow-[0_0_10px_rgba(0,255,255,0.5)]">
+      </div>
+
+      <!-- Links Left -->
+      <div class="w-[calc(50%-220px)] flex justify-start gap-8 md:gap-14 pl-4 z-20">
+        <a href="#hero"
+          class="nav-link text-white/70 text-sm hover:text-cyan-400 transition-all duration-300 font-medium tracking-wide uppercase">Home</a>
+        <a href="#about"
+          class="nav-link text-white/70 text-sm hover:text-cyan-400 transition-all duration-300 font-medium tracking-wide uppercase">About</a>
+      </div>
+
+      <!-- Logo Notch Content (protrudes downwards) -->
+      <div
+        class="absolute left-1/2 -translate-x-1/2 top-0 h-[98px] w-[400px] flex items-center justify-center gap-4 z-20">
+        <!-- Stylized Logo -->
+        <div class="flex items-center justify-center">
+          <svg class="w-12 h-12" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+            style="filter: drop-shadow(0 0 8px rgba(0,255,255,0.65));">
+            <!-- Circular outer brackets -->
+            <path d="M 28,15 A 42,42 0 0,0 28,85" stroke="#00ffff" stroke-width="5" stroke-linecap="round" />
+            <path d="M 72,15 A 42,42 0 0,1 72,85" stroke="#00ffff" stroke-width="5" stroke-linecap="round" />
+            <!-- Stylized B -->
+            <path d="M 38,30 V 70 H 52 A 10,10 0 0,0 52,50 H 38 H 52 A 10,10 0 0,0 52,30 Z" stroke="#00ffff"
+              stroke-width="5" stroke-linejoin="round" stroke-linecap="round" />
+          </svg>
+        </div>
+
+        <!-- Text Info -->
+        <div class="flex flex-col justify-center select-none">
+          <span class="text-cyan-400 text-lg md:text-xl font-bold tracking-wider uppercase glow-cyan leading-tight"
+            style="font-family: 'Space Grotesk', sans-serif;">
+            BRYAN CUTIPA CARCASI
+          </span>
+          <span
+            class="text-cyan-500/70 text-[9px] md:text-[10px] font-semibold tracking-widest uppercase leading-none mt-0.5"
+            style="font-family: 'JetBrains Mono', monospace; text-shadow: 0 0 4px rgba(0, 180, 255, 0.45);">
+            WHOEVER STRIVES SHALL SUCCEED
+          </span>
+        </div>
+      </div>
+
+      <!-- Links Right -->
+      <div class="w-[calc(50%-220px)] flex justify-end gap-8 md:gap-14 pr-4 z-20">
+        <a href="#projects"
+          class="nav-link text-white/70 text-sm hover:text-cyan-400 transition-all duration-300 font-medium tracking-wide uppercase">Project</a>
+        <a href="#contact"
+          class="nav-link text-white/70 text-sm hover:text-cyan-400 transition-all duration-300 font-medium tracking-wide uppercase">Contact</a>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 pt-28 pb-24">
+
+      <!-- ===== HERO ===== -->
+      <section id="hero" class="min-h-[calc(100vh-112px)] flex flex-col justify-center items-start mb-24">
+        <div
+          class="border border-white/10 text-white/70 px-4 py-1.5 rounded-full inline-flex items-center gap-2 mb-8 text-xs mono tracking-wider"
+          style="background:rgba(255,255,255,.04)">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          Disponible para colaboraciones
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-bold mb-5 leading-none tracking-tight">
+          <span class="text-cyan-400 glow-cyan block">BIENVENIDO A</span>
+          <span class="text-white block">MI PORTAFOLIO</span>
+        </h1>
+
+        <h2 class="text-xl md:text-2xl text-white/75 font-normal mb-5 mono">
+          Estadístico &amp; Desarrollador de Datos
+        </h2>
+
+        <p class="text-base text-white/50 mb-10 max-w-lg leading-relaxed font-light">
+          Combino el rigor del análisis cuantitativo con el desarrollo de software para crear soluciones que transforman
+          datos en decisiones. Especializado en modelamiento estadístico, R/Python y aplicaciones web interactivas.
+        </p>
+
+        <div class="flex flex-wrap gap-2" id="skills-container"></div>
+      </section>
+
+      <!-- ===== SOBRE MÍ ===== -->
+      <section id="about" class="pt-24 mb-32 reveal">
+        <div class="flex items-center gap-4 mb-14">
+          <h2 class="text-2xl md:text-3xl font-bold text-cyan-400 uppercase tracking-tight">Sobre mí</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+          <div class="space-y-5 text-white/60 font-light text-base leading-relaxed">
+            <p>
+              Hola, soy <strong class="text-cyan-400 font-medium">Bryan Cutipa Carcasi</strong>, estudiante de <strong
+                class="text-white font-medium">Ingeniería Estadística e Informática</strong> en la Universidad Nacional
+              del Altiplano de Puno (UNAP), actualmente en el VI semestre.
+            </p>
+            <p>
+              Mi trabajo se centra en la sinergia entre el <em class="text-indigo-400">análisis cuantitativo</em> y el
+              desarrollo computacional: desde modelos de series temporales y regresión múltiple hasta
+              dashboards interactivos en R Shiny y bases de datos relacionales con Java Swing.
+            </p>
+            <p>
+              Mi lema es <em class="text-cyan-400 font-medium">"Whoever strives shall succeed"</em> — reflejo de mi
+              compromiso con cada detalle académico y técnico.
+            </p>
+            <div class="flex gap-3 flex-wrap pt-2">
+              <a href="https://github.com/BRy4n1-gif" target="_blank"
+                class="badge badge-cyan hover:bg-white/5 transition-colors">🐙 GitHub: BRy4n1-gif</a>
+              <a href="https://www.shinyapps.io/admin/#/profile" target="_blank"
+                class="badge badge-pink hover:bg-white/5 transition-colors">📊 ShinyApps.io</a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="stat-card cyan">
+              <h3 class="text-3xl font-bold text-cyan-400 mb-1 mono">VI</h3>
+              <p class="text-xs text-white/45">Semestre · UNAP Puno</p>
+            </div>
+            <div class="stat-card pink">
+              <h3 class="text-3xl font-bold text-pink-400 mb-1 mono">3+</h3>
+              <p class="text-xs text-white/45">Años de desarrollo</p>
+            </div>
+            <div class="stat-card indigo">
+              <h3 class="text-3xl font-bold mb-1 mono" style="color:var(--indigo)">10+</h3>
+              <p class="text-xs text-white/45">Proyectos académicos</p>
+            </div>
+            <div class="stat-card cyan">
+              <h3 class="text-3xl font-bold text-cyan-400 mb-1 mono">∞</h3>
+              <p class="text-xs text-white/45">Curiosidad y aprendizaje</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills bars -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-7" id="skill-bars"></div>
+      </section>
+
+      <!-- ===== FORMACIÓN ===== -->
+      <section id="education" class="pt-12 mb-32 reveal">
+        <div class="flex items-center gap-4 mb-14">
+          <h2 class="text-2xl md:text-3xl font-bold text-cyan-400 uppercase tracking-tight">Formación</h2>
+          <div class="section-rule"></div>
+        </div>
+        <div class="border border-white/8 rounded-2xl p-8 md:p-10" style="background:rgba(255,255,255,.03)">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="text-xl font-semibold text-white mb-1">Ingeniería Estadística e Informática</h3>
+              <p class="text-cyan-400 text-sm mono">Universidad Nacional del Altiplano — Puno, Perú</p>
+            </div>
+            <div class="badge badge-indigo text-xs">En curso · 2022 – Presente</div>
+          </div>
+          <ul class="space-y-3 text-white/55 text-sm font-light leading-relaxed list-none pl-0">
+            <li class="flex gap-3"><span class="text-cyan-400 mt-0.5">▸</span>Formación avanzada en inferencia
+              estadística, análisis multivariante, econometría y muestreo estadístico.</li>
+            <li class="flex gap-3"><span class="text-cyan-400 mt-0.5">▸</span>Especialización técnico-computacional en
+              algoritmos, estructuras de datos, programación orientada a objetos y cálculo numérico.</li>
+            <li class="flex gap-3"><span class="text-cyan-400 mt-0.5">▸</span>Cursos de regresión múltiple (OLS
+              matricial, ANOVA, diagnóstico), series de tiempo, clustering y aprendizaje automático aplicado.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== PROYECTOS ===== -->
+      <section id="projects" class="pt-12 mb-32 reveal">
+        <div class="flex items-center gap-4 mb-14">
+          <h2 class="text-2xl md:text-3xl font-bold text-cyan-400 uppercase tracking-tight">Proyectos</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+          <!-- Proyecto 2 -->
+          <div class="proj-card c-pink">
+            <div class="proj-img" style="background:linear-gradient(135deg,#1a0d24,#120a1a)">
+              <div class="blob" style="background:rgba(244,114,182,.25)"></div>
+              <span class="proj-icon">📊</span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between gap-5">
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-2">Dashboards Interactivos — R Shiny</h3>
+                <p class="text-sm text-white/45 leading-relaxed font-light">Dashboards reactivos desplegados en
+                  ShinyApps.io para visualización dinámica de modelos predictivos, regresión múltiple y análisis de
+                  clustering.</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge badge-pink">R Shiny</span>
+                <span class="badge" style="color:#94a3b8">ggplot2</span>
+                <span class="badge" style="color:#94a3b8">ShinyApps.io</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 3 -->
+          <div class="proj-card c-indigo">
+            <div class="proj-img" style="background:linear-gradient(135deg,#0d1130,#080e26)">
+              <div class="blob" style="background:rgba(129,140,248,.25)"></div>
+              <span class="proj-icon">🗄️</span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between gap-5">
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-2">Sistemas de BD — Java + SQL</h3>
+                <p class="text-sm text-white/45 leading-relaxed font-light">Diseño e implementación de bases de datos
+                  relacionales (MySQL/XAMPP) con interfaces gráficas Java Swing. Lógica orientada a objetos y
+                  arquitectura MVC.</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge badge-indigo">Java Swing</span>
+                <span class="badge" style="color:#94a3b8">MySQL · XAMPP</span>
+                <span class="badge" style="color:#94a3b8">Git</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 4 -->
+          <div class="proj-card c-cyan">
+            <div class="proj-img" style="background:linear-gradient(135deg,#0a1e1a,#061512)">
+              <div class="blob" style="background:rgba(34,211,238,.2)"></div>
+              <span class="proj-icon">🔢</span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between gap-5">
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-2">Regresión Múltiple OLS</h3>
+                <p class="text-sm text-white/45 leading-relaxed font-light">Resolución completa del Modelo Máximo Rango
+                  (OSTLE) vía álgebra matricial: estimaciones β̂, tablas ANOVA, intervalos de confianza, pruebas de
+                  hipótesis y diagnóstico gráfico.</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge badge-cyan">LaTeX · pgfplots</span>
+                <span class="badge" style="color:#94a3b8">R / lm()</span>
+                <span class="badge" style="color:#94a3b8">Regresión</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 5 -->
+          <div class="proj-card c-pink">
+            <div class="proj-img" style="background:linear-gradient(135deg,#1e0d17,#130709)">
+              <div class="blob" style="background:rgba(244,114,182,.2)"></div>
+              <span class="proj-icon">🌐</span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between gap-5">
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-2">Clustering de Países</h3>
+                <p class="text-sm text-white/45 leading-relaxed font-light">Análisis K-Means sobre datos socioeconómicos
+                  globales en Jupyter Notebook. Auditoría crítica de multicolinealidad, bugs de silhouette y artefactos
+                  de outliers.</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge badge-pink">Python · sklearn</span>
+                <span class="badge" style="color:#94a3b8">Jupyter · pandas</span>
+                <span class="badge" style="color:#94a3b8">K-Means</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== CONTACTO ===== -->
+      <section id="contact" class="pt-12 mb-12 reveal">
+        <div class="flex items-center gap-4 mb-14">
+          <h2 class="text-2xl md:text-3xl font-bold text-cyan-400 uppercase tracking-tight">Contacto</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div class="flex flex-col justify-between gap-10">
+            <div class="space-y-4">
+              <h3 class="text-2xl font-semibold text-white">¿Tienes un proyecto en mente?</h3>
+              <p class="text-white/50 font-light leading-relaxed text-sm">
+                Siempre estoy abierto a colaboraciones en análisis de datos, modelos estadísticos, desarrollo de
+                software o proyectos de investigación académica. Escríbeme.
+              </p>
+            </div>
+            <div class="flex flex-col gap-3">
+              <a href="mailto:[EMAIL_ADDRESS]"
+                class="flex items-center gap-3 border border-white/8 px-4 py-3 rounded-2xl hover:border-cyan-400/30 hover:-translate-y-0.5 transition-all duration-300 group"
+                style="background:rgba(255,255,255,.03)">
+                <span class="text-cyan-400 text-lg">📧</span>
+                <span
+                  class="text-sm text-white/60 group-hover:text-white transition-colors mono">zbryanzclasher@gmail.com</span>
+              </a>
+              <a href="https://github.com/BRy4n1-gif" target="_blank"
+                class="flex items-center gap-3 border border-white/8 px-4 py-3 rounded-2xl hover:border-pink-400/30 hover:-translate-y-0.5 transition-all duration-300 group"
+                style="background:rgba(255,255,255,.03)">
+                <span class="text-pink-400 text-lg">🐙</span>
+                <span
+                  class="text-sm text-white/60 group-hover:text-white transition-colors mono">github.com/BRy4n1-gif</span>
+              </a>
+              <a href="https://www.shinyapps.io/admin/#/profile" target="_blank"
+                class="flex items-center gap-3 border border-white/8 px-4 py-3 rounded-2xl hover:border-indigo-400/30 hover:-translate-y-0.5 transition-all duration-300 group"
+                style="background:rgba(255,255,255,.03)">
+                <span style="color:var(--indigo)" class="text-lg">📊</span>
+                <span class="text-sm text-white/60 group-hover:text-white transition-colors mono">ShinyApps.io
+                  Profile</span>
+              </a>
+              <div class="flex items-center gap-3 border border-white/8 px-4 py-3 rounded-2xl"
+                style="background:rgba(255,255,255,.03)">
+                <span class="text-cyan-400 text-lg">📍</span>
+                <span class="text-sm text-white/60 mono">Puno, Perú</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <form class="p-8 border border-white/8 rounded-3xl backdrop-blur-md space-y-5"
+            style="background:rgba(255,255,255,.03)"
+            onsubmit="event.preventDefault();this.querySelector('.send-btn').textContent='✓ Enviado';setTimeout(()=>this.reset()&&(this.querySelector('.send-btn').textContent='Enviar mensaje'),3000)">
+            <div>
+              <label class="block text-[11px] uppercase tracking-widest text-white/35 mb-2 mono">Nombre</label>
+              <input type="text" required class="form-input" placeholder="Tu nombre...">
+            </div>
+            <div>
+              <label class="block text-[11px] uppercase tracking-widest text-white/35 mb-2 mono">Email</label>
+              <input type="email" required class="form-input" placeholder="tu@email.com">
+            </div>
+            <div>
+              <label class="block text-[11px] uppercase tracking-widest text-white/35 mb-2 mono">Mensaje</label>
+              <textarea rows="4" required class="form-input resize-none"
+                placeholder="Cuéntame sobre tu proyecto..."></textarea>
+            </div>
+            <button type="submit"
+              class="send-btn w-full py-3.5 rounded-xl font-semibold text-sm text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+              style="background:linear-gradient(90deg,#22d3ee,#818cf8,#f472b6);box-shadow:0 0 20px rgba(34,211,238,.2)">
+              Enviar mensaje
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-20 pt-8 border-t text-center text-xs text-white/20 mono"
+        style="border-color:rgba(255,255,255,.05)">
+        <p>© 2026 Bryan Cutipa Carcasi · Desarrollado con 💻 &amp; 📊</p>
+      </footer>
+
+    </div>
+
+    <!-- Scroll FAB -->
+    <button id="scroll-btn"
+      class="fixed right-5 bottom-7 z-40 w-11 h-11 border border-white/15 text-white rounded-full flex items-center justify-center transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 hover:scale-105 backdrop-blur-sm text-lg"
+      style="background:rgba(255,255,255,.04)">↓</button>
+
+  </div>
+
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    /* ---- State ---- */
+    let page = 'avatar';
+
+    /* ---- Elements ---- */
+    const avatarPage = document.getElementById('avatar-page');
+    const portfolioPage = document.getElementById('portfolio-page');
+    const avatarCard = document.getElementById('avatar-card');
+    const enterBtn = document.getElementById('enter-btn');
+    const backBtn = document.getElementById('back-btn');
+    const scrollBtn = document.getElementById('scroll-btn');
+    const typingText = document.getElementById('typing-text');
+
+    /* ---- Skills tags ---- */
+    const skillTags = ['R · RShiny', 'Python', 'LaTeX', 'Java', 'SQL / MySQL', 'Git & GitHub', 'Regresión OLS', 'K-Means', 'Inferencia Estadística', 'Análisis Multivariante'];
+    const skillsContainer = document.getElementById('skills-container');
+    skillTags.forEach(s => {
+      const t = document.createElement('div');
+      t.className = 'border border-white/15 px-4 py-1.5 rounded-full text-sm mono transition-all duration-300 hover:bg-white hover:text-black hover:border-white hover:-translate-y-0.5 hover:shadow-lg cursor-pointer';
+      t.style.background = 'rgba(255,255,255,.04)';
+      t.textContent = s;
+      skillsContainer.appendChild(t);
+    });
+
+    /* ---- Skill bars ---- */
+    const skills = [
+      { name: 'R & RShiny', pct: 90, color: '#22d3ee' },
+      { name: 'LaTeX', pct: 85, color: '#22d3ee' },
+      { name: 'Python', pct: 75, color: '#818cf8' },
+      { name: 'SQL / MySQL', pct: 78, color: '#818cf8' },
+      { name: 'Java (Swing)', pct: 72, color: '#f472b6' },
+      { name: 'Git & GitHub', pct: 82, color: '#f472b6' },
+    ];
+    const skillBarsEl = document.getElementById('skill-bars');
+    skills.forEach(sk => {
+      const row = document.createElement('div');
+      row.innerHTML = `
+      <div class="flex justify-between mb-2 text-sm">
+        <span class="text-white/70 mono">${sk.name}</span>
+        <span class="mono text-xs" style="color:${sk.color}">${sk.pct}%</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" data-width="${sk.pct}" style="width:0%;background:${sk.color};"></div>
+      </div>`;
+      skillBarsEl.appendChild(row);
+    });
+
+    /* ---- Starfield ---- */
+    function initStarfield() {
+      const sf = document.getElementById('starfield');
+      sf.innerHTML = '';
+      for (let i = 0; i < 160; i++) {
+        const s = document.createElement('div');
+        s.className = 'anim-twinkle';
+        const sz = Math.random() * 2;
+        s.style.cssText = `position:absolute;background:white;border-radius:50%;pointer-events:none;
+        width:${sz}px;height:${sz}px;
+        left:${Math.random() * 100}%;top:${Math.random() * 100}%;
+        opacity:${Math.random() * .7 + .2};
+        animation-duration:${Math.random() * 3 + 2}s;`;
+        sf.appendChild(s);
+      }
+    }
+
+    /* ---- Typing text ---- */
+    function initTypingText() {
+      typingText.innerHTML = '';
+      'BRYAN CUTIPA CARCASI'.split('').forEach((ch, i) => {
+        const span = document.createElement('span');
+        span.textContent = ch === ' ' ? '\u00A0' : ch;
+        span.className = 'inline-block opacity-0 anim-charReveal';
+        span.style.animationDelay = `${1 + i * 0.07}s`;
+        typingText.appendChild(span);
+      });
+    }
+
+    /* ---- Transitions ---- */
+    function goPortfolio() {
+      if (page === 'portfolio') return;
+      page = 'portfolio';
+      avatarPage.classList.add('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        avatarPage.classList.add('hidden');
+        portfolioPage.classList.remove('hidden');
+        portfolioPage.scrollTop = 0;
+        requestAnimationFrame(() => portfolioPage.classList.remove('opacity-0'));
+        setTimeout(() => animateSkillBars(), 600);
+      }, 700);
+    }
+
+    function goAvatar() {
+      if (page === 'avatar') return;
+      page = 'avatar';
+      portfolioPage.classList.add('opacity-0');
+      setTimeout(() => {
+        portfolioPage.classList.add('hidden');
+        avatarPage.classList.remove('hidden');
+        initStarfield();
+        initTypingText();
+        requestAnimationFrame(() => avatarPage.classList.remove('opacity-0', 'pointer-events-none'));
+      }, 700);
+    }
+
+    function animateSkillBars() {
+      document.querySelectorAll('.skill-bar-fill').forEach(el => {
+        el.style.width = el.dataset.width + '%';
+      });
+    }
+
+    /* ---- Events ---- */
+    avatarPage.addEventListener('click', goPortfolio);
+    avatarCard.addEventListener('click', e => { e.stopPropagation(); goPortfolio(); });
+    enterBtn.addEventListener('click', e => { e.stopPropagation(); goPortfolio(); });
+    backBtn.addEventListener('click', e => { e.stopPropagation(); goAvatar(); });
+
+    scrollBtn.addEventListener('click', () => {
+      const next = document.getElementById('about');
+      if (next) portfolioPage.scrollTo({ top: next.offsetTop - 100, behavior: 'smooth' });
+    });
+
+    /* ---- Nav smooth scroll ---- */
+    document.querySelectorAll('.nav-link').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.getElementById(a.getAttribute('href').slice(1));
+        if (target) portfolioPage.scrollTo({ top: target.offsetTop - 90, behavior: 'smooth' });
+      });
+    });
+
+    /* ---- Scroll reveal ---- */
+    function checkReveal() {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.88) el.classList.add('visible');
+      });
+    }
+    portfolioPage.addEventListener('scroll', checkReveal);
+
+    /* ---- Mouse parallax ---- */
+    document.addEventListener('mousemove', e => {
+      if (page === 'avatar') {
+        const mx = (e.clientX / innerWidth) * 2 - 1;
+        const my = (e.clientY / innerHeight) * 2 - 1;
+        avatarCard.style.transform = `translate(${mx * 14}px,${my * 14}px)`;
+      } else {
+        const x = e.clientX / innerWidth, y = e.clientY / innerHeight;
+        document.querySelectorAll('.anim-moveLine').forEach(l => {
+          l.style.opacity = (0.3 + (x + y) * 0.45).toString();
+        });
+      }
+    });
+
+    /* ---- Canvas background - sistema del primer HTML ---- */
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() { canvas.width = innerWidth; canvas.height = innerHeight; }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2.5 + 1;
+        this.speedX = Math.random() * 1.2 - 0.6;
+        this.speedY = Math.random() * 1.2 - 0.6;
+        this.color = Math.random() > 0.5 ? '#00ffff' : '#ff00ff';
+        this.opacity = Math.random() * 0.4 + 0.2;
+        this.trail = [];
+        this.maxTrailLength = 15;
+      }
+      update() {
+        this.trail.push({ x: this.x, y: this.y });
+        if (this.trail.length > this.maxTrailLength) this.trail.shift();
+        this.x += this.speedX; this.y += this.speedY;
+        if (this.x < 0) this.x = canvas.width;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
+      }
+      draw() {
+        for (let i = 0; i < this.trail.length - 1; i++) {
+          ctx.globalAlpha = (i / this.trail.length) * this.opacity * 0.4;
+          ctx.strokeStyle = this.color;
+          ctx.lineWidth = this.size * 0.8;
+          ctx.beginPath();
+          ctx.moveTo(this.trail[i].x, this.trail[i].y);
+          ctx.lineTo(this.trail[i + 1].x, this.trail[i + 1].y);
+          ctx.stroke();
+        }
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    class DataStream {
+      constructor() { this.reset(); }
+      reset() {
+        this.startX = canvas.width * 0.7 + Math.random() * canvas.width * 0.3;
+        this.startY = canvas.height * 0.7 + Math.random() * canvas.height * 0.3;
+        this.targetX = canvas.width * 0.1 + Math.random() * canvas.width * 0.4;
+        this.targetY = canvas.height * 0.1 + Math.random() * canvas.height * 0.4;
+        this.x = this.startX; this.y = this.startY;
+        this.cp1x = this.startX + (Math.random() - 0.5) * 300;
+        this.cp1y = this.startY - Math.random() * 200;
+        this.cp2x = this.targetX + (Math.random() - 0.5) * 300;
+        this.cp2y = this.targetY + Math.random() * 200;
+        const colors = ['#00ffff', '#00aaff', '#aa00ff', '#ff00ff'];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.progress = 0;
+        this.speed = 0.003 + Math.random() * 0.006;
+        this.lineWidth = 1.5 + Math.random() * 2.5;
+        this.opacity = 0.25 + Math.random() * 0.35;
+        this.trail = [];
+        this.maxTrailLength = 25;
+      }
+      update() {
+        this.progress += this.speed;
+        if (this.progress >= 1) { this.reset(); return; }
+        const t = this.progress, mt = 1 - t;
+        this.x = mt * mt * mt * this.startX + 3 * mt * mt * t * this.cp1x + 3 * mt * t * t * this.cp2x + t * t * t * this.targetX;
+        this.y = mt * mt * mt * this.startY + 3 * mt * mt * t * this.cp1y + 3 * mt * t * t * this.cp2y + t * t * t * this.targetY;
+        this.trail.push({ x: this.x, y: this.y });
+        if (this.trail.length > this.maxTrailLength) this.trail.shift();
+      }
+      draw() {
+        if (this.trail.length < 2) return;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        for (let i = 1; i < this.trail.length; i++) {
+          const alpha = (i / this.trail.length) * this.opacity;
+          const width = this.lineWidth * (i / this.trail.length);
+          ctx.globalAlpha = alpha;
+          ctx.lineWidth = width;
+          const grad = ctx.createLinearGradient(this.trail[i - 1].x, this.trail[i - 1].y, this.trail[i].x, this.trail[i].y);
+          grad.addColorStop(0, this.color + '00');
+          grad.addColorStop(0.5, this.color);
+          grad.addColorStop(1, this.color + '00');
+          ctx.strokeStyle = grad;
+          ctx.beginPath();
+          ctx.moveTo(this.trail[i - 1].x, this.trail[i - 1].y);
+          ctx.lineTo(this.trail[i].x, this.trail[i].y);
+          ctx.stroke();
+        }
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.lineWidth / 1.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    const particles = Array.from({ length: 30 }, () => new Particle());
+    const streams = Array.from({ length: 5 }, () => new DataStream());
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      ctx.strokeStyle = '#00ffff';
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 140) {
+            ctx.globalAlpha = (1 - d / 140) * 0.2;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      streams.forEach(s => { s.update(); s.draw(); });
+      requestAnimationFrame(animate);
+    }
+
+    /* ---- Init ---- */
+    window.addEventListener('DOMContentLoaded', () => {
+      initStarfield();
+      initTypingText();
+      animate();
+    });
+  </script>
 </body>
+
 </html>
